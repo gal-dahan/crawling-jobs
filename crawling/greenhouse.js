@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const cities = require("./cities.json");
-//const jobs= require('../model/Jobs')
+const Jobs= require('../model/Jobs.mongo')
 const companyGreenhouse = [
     "acronis",
     "similarweb",
@@ -27,7 +27,7 @@ const companyGreenhouse = [
     "doubleverify",
   ];
   
-  const Jobs = [];
+  //const Jobs = [];
 
 
   companyGreenhouse.forEach((companyName) => {
@@ -54,14 +54,25 @@ const companyGreenhouse = [
           let idJob = `${companyName}-${link.split("/").pop()}`;
           //if Location job is Israel push
           if (isIsraelByLocation || isIsrelByCities)
-            Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
+            //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
+                saveData(title, link, location, idJob,companyName)
         });
       })
       .catch((err) => console.log(err));
   });
 
-
+ async function saveData(title, link, location, idJob,companyName){
+    const job= new Jobs({
+        title:title,
+         link:link,
+          location:location, 
+          idJob:idJob,
+          companyName:companyName
+    })
+    await job.save()
+    console.log(job);
+}
 
 module.exports={
-    Jobs
+    
 }
