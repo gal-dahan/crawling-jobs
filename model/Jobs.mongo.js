@@ -13,7 +13,7 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  idJob: {
+  id: {
     type: String,
     required: true,
   },
@@ -21,5 +21,6 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+},  { timestamps: true }
+);
 module.exports = mongoose.model("Jobs", jobSchema);

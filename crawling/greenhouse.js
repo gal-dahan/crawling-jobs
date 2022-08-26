@@ -2,6 +2,8 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const cities = require("./cities.json");
 const Jobs= require('../model/Jobs.mongo')
+const { saveData } = require= require('../controllers/jobs')
+
 const companyGreenhouse = [
     "acronis",
     "similarweb",
@@ -30,9 +32,10 @@ const companyGreenhouse = [
   //const Jobs = [];
 
 
-  companyGreenhouse.forEach((companyName) => {
+  const greenHouse = async(companyName) =>{
+    console.log(companyName);
     let url = "https://boards.greenhouse.io/" + companyName;
-  
+      
     axios
       .get(url)
       .then((response) => {
@@ -56,23 +59,13 @@ const companyGreenhouse = [
           if (isIsraelByLocation || isIsrelByCities)
             //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
                 saveData(title, link, location, idJob,companyName)
-        });
-      })
-      .catch((err) => console.log(err));
-  });
+              });
+            })
+            .catch((err) => console.log(err));
+        }
 
- async function saveData(title, link, location, idJob,companyName){
-    const job= new Jobs({
-        title:title,
-         link:link,
-          location:location, 
-          idJob:idJob,
-          companyName:companyName
-    })
-    await job.save()
-    console.log(job);
+  const startGreenHouse=async()=>{
+  const crawlCalls=companyGreenhouse.map(greenHouse);
+  const crawlResults = await Promise.all(crawlCalls);
 }
-
-module.exports={
-    
-}
+module.exports = startGreenHouse
