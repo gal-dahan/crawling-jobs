@@ -6,9 +6,12 @@ const { saveData } = require= require('../controllers/jobs')
 
 const companyGreenhouse = [
     "acronis",
+    "cb4",
     "similarweb",
+    "meshpayments",
     "pagaya",
     "snyk",
+    "techstars57",
     "vimeo",
     "forter",
     "via",
@@ -16,7 +19,9 @@ const companyGreenhouse = [
     "bringg",
     "intelligo",
     "dynamicyield",
+    "amwell",
     "melio",
+    "ziprecruiter",
     "diagnosticrobotics",
     "khealth",
     "bluevine",
@@ -27,9 +32,18 @@ const companyGreenhouse = [
     "Torq",
     "apiiro",
     "doubleverify",
+    "BigID",
+    "doitintl",
+    "tremorinternational",
+    "rhinohealth",
+    "canonical",
+    "clickup",
+    "leddartech",
+    "cowen",
+    "vonage",
+    "binah"
   ];
   
-  //const Jobs = [];
 
 
   const greenHouse = async(companyName) =>{
@@ -42,7 +56,7 @@ const companyGreenhouse = [
         const html = response.data;
         const $ = cheerio.load(html);
   
-        $(".opening", html).each(function () {
+        $(".opening", html).each(async function () {
           let location = $(this).children(".location").text().trim();
           let title = $(this).children("a").first().text().trim();
           let link = $(this).children("a").first().attr("href");
@@ -58,13 +72,13 @@ const companyGreenhouse = [
           //if Location job is Israel push
           if (isIsraelByLocation || isIsrelByCities)
             //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
-                saveData(title, link, location, idJob,companyName)
+            await saveData(title, link, location, idJob,companyName)
               });
             })
             .catch((err) => console.log(err));
         }
 
-  const startGreenHouse=async()=>{
+const startGreenHouse=async()=>{
   const crawlCalls=companyGreenhouse.map(greenHouse);
   const crawlResults = await Promise.all(crawlCalls);
 }
