@@ -13,7 +13,7 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  _id: {
+  idJob: {
     type: String,
     required: true,
   },
@@ -21,6 +21,13 @@ const jobSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-},  { timestamps: true }
+  expireAt: {
+    type: Date,
+    default: Date.now,
+    index: { expires: '60 day' }
+}
+},  
+{ timestamps: true }
+
 );
 module.exports = mongoose.model("Jobs", jobSchema);

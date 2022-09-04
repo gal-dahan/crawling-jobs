@@ -1,14 +1,14 @@
 const Jobs = require("../model/Jobs.mongo");
 
 const saveData = async (title, link, location, idJob, companyName) => {
-  const found = Jobs.findOne(idJob)
-    if (!found ){
+  const found = await Jobs.findOne({where : {idJob: idJob}});
+   if (!found){
    try {
     const job = new Jobs({
       title: title,
       link: link,
       location: location,
-      _id: idJob,
+      idJob: idJob,
       companyName: companyName,
     });
     await job.save();
@@ -17,7 +17,7 @@ const saveData = async (title, link, location, idJob, companyName) => {
     console.log(e);
   } }
   else{
-    console.log(`${title} -- is already in the data with id -- ${idJob}`);
+    console.log(`${title} ***** is already in the data with id ***** ${idJob}`);
   }
 };
 

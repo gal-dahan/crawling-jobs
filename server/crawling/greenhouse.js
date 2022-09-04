@@ -19,6 +19,7 @@ const companyGreenhouse = [
     "bringg",
     "intelligo",
     "dynamicyield",
+    "pecanai",
     "amwell",
     "melio",
     "ziprecruiter",
@@ -41,7 +42,10 @@ const companyGreenhouse = [
     "leddartech",
     "cowen",
     "vonage",
-    "binah"
+    "binah",
+    "atbayjobs",
+    "innovid",
+    "mixtiles"
   ];
   
 
@@ -70,9 +74,11 @@ const companyGreenhouse = [
           link = hasRelativeLink ? `https://boards.greenhouse.io${link}` : link;
           let idJob = `${companyName}-${link.split("/").pop()}`;
           //if Location job is Israel push
-          if (isIsraelByLocation || isIsrelByCities)
-            //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
+          if (isIsraelByLocation || isIsrelByCities){
             await saveData(title, link, location, idJob,companyName)
+
+          }
+            //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });
               });
             })
             .catch((err) => console.log(err));
