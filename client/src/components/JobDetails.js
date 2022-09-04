@@ -1,3 +1,5 @@
+import TimeAgo from "react-timeago";
+
 const JobDetails = ({  job }) => {
 
   return (
@@ -8,10 +10,10 @@ const JobDetails = ({  job }) => {
       <p><strong>Link:  </strong><a href={job.link} target="_blank" >Click here</a>
 </p>
 
-      <p><strong>Scanned in date:  </strong>
-
-      { (job.createdAt instanceof Date) ? job.createdAt.toLocaleDateString() : new Date(job.createdAt).toLocaleDateString() }
-
+      <p><strong>Scanned:  </strong>
+      <TimeAgo date={job.createdAt}/>
+      { //(job.createdAt instanceof Date) ? job.createdAt.toLocaleDateString() : new Date(job.createdAt).toLocaleDateString() 
+      }
       </p>
     </div>
   )

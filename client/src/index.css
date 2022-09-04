@@ -100,3 +100,47 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+
+.loadMore {
+  width: 200px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: #1aac83;
+  transition: .3s;
+}
+.loadMore:hover {
+  color: #1aac83;
+  background-color: #fff;
+  border: 1px solid #1aac83;
+  text-decoration: none;
+}
+.loader {
+  display: block;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #1aac83;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
