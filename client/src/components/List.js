@@ -1,0 +1,36 @@
+import { Link } from "react-router-dom";
+
+const List = ({  company }) => {
+  
+  return (
+    <div className="workout-details">
+      <h3>
+      <img style={{
+              width: 40,
+              verticalAlign: "center",
+              display: "inline-block",
+              margin: "0 10px"
+
+            }} 
+      src={`https://www.google.com/s2/favicons?domain=${company}.com&sz=128`}
+      alt={company}
+      />
+      <Link to={`/company/${company}`}>
+       {company.charAt(0).toUpperCase()+company.slice(1)}    
+      </Link>
+      </h3>
+
+  
+      <p><strong>All jobs from:  </strong>
+      <Link to={`/company/${company}`}>
+      {company.charAt(0).toUpperCase()+company.slice(1)}    
+      </Link>
+      </p>
+      <p><strong>More details:  </strong>
+      <a href={`https://finder.startupnationcentral.org/company_page/${company}`} target="_blank" >Click here</a>
+      </p>
+    </div>
+  )
+}
+
+export default List;

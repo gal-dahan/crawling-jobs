@@ -13,6 +13,7 @@ body {
 }
 header {
   background: #fff;
+  
 }
 header .container {
   max-width: 1400px;
@@ -20,11 +21,13 @@ header .container {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 header a {
   color: #333;
   text-decoration: none;
+  padding-left: 16px;
+  padding-right: 16px;
+
 }
 .pages{
   max-width: 1400px;
@@ -70,6 +73,7 @@ header a {
   color: #333;
 }
 
+
 /* new workout form */
 label, input {
   display: block;
@@ -100,7 +104,6 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
-
 
 .loadMore {
   width: 200px;
