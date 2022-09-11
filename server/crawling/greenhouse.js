@@ -40,12 +40,19 @@ const companyGreenhouse = [
     "canonical",
     "clickup",
     "leddartech",
+    "lunasolutions",
     "cowen",
     "vonage",
     "binah",
     "atbayjobs",
     "innovid",
-    "mixtiles"
+    "mixtiles",
+    "itamarmedicalltd",
+    "upsolver",
+    "outbraininc",
+    "ermetic",
+    "obligo",
+    "walnut"
   ];
   
 
