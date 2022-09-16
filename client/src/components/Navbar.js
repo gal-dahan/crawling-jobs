@@ -11,7 +11,7 @@ const Navbar = () => {
         <Link to="/CompaniesList" >
           <h3>Companies List</h3>
         </Link>
-        <Link to="/CompaniesList">
+        <Link to="/about">
           <h3>About us</h3>
         </Link>
       </div>

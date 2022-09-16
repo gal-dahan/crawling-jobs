@@ -41,6 +41,25 @@ header a {
   grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
+.about {
+  position: relative;
+  width:70%;
+  height:400px;
+  background:#FFF;
+  margin: auto;
+  text-align:center;
+  position:relative;
+  top:8px;
+  border-radius: 30px;
+
+
+}
+.about p{
+  display: block;
+  text-align:center;
+  padding: 30px;
+
+}
 .workout-details {
   background: #fff;
   border-radius: 4px;

@@ -3,7 +3,7 @@ import useFetch from "../useFetch";
 
 // components
 import JobDetails from "../components/JobDetails";
-import WorkoutForm from "../components/WorkoutForm";
+import ContactForm  from "../components/ContactForm";
 
 const Home = () => {
   const [visible, setVisible] = useState(4);
@@ -12,7 +12,7 @@ const Home = () => {
     isPending,
     data: jobs,
   } = useFetch("http://localhost:8000/api");
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const showMore = () => {
     setVisible((prevVale) => prevVale + 4);
@@ -22,18 +22,40 @@ const Home = () => {
       <div className="workouts">
         {error && <div>{error}</div>}
         {isPending && <div className="loader"></div>}
-        {      <input id="search-box" onChange={filterBySearch} />}
+        {<input
+        type="text"
+        placeholder=" search....."
+        onChange={(event) => {
+          setSearchTerm(event.target.value);
+        }}
+      />}
         <h3>{(jobs || 0).count} Jobs available</h3>
-        {(jobs &&
-          jobs.jobs
-            .slice(0, visible)
-            .map((job) => <JobDetails job={job} key={job._id} />))}
+        {(jobs &&jobs.jobs.filter((val) => {
+        if (searchTerm === "") {
+          return val;
+        } else if (
+          val.title
+            .toLocaleLowerCase()
+            .includes(searchTerm.toLocaleLowerCase().trim())
+        )      
+        {
+          return val;
+        }
+        else if (
+          val.companyName
+            .toLocaleLowerCase()
+            .includes(searchTerm.toLocaleLowerCase().trim())
+        )      
+        {
+          return val;
+        }
+      }).slice(0, visible).map((job) => <JobDetails job={job} key={job._id} />))}
 
         <button onClick={showMore} className="loadMore">
           Load More
         </button>
       </div>
-      <WorkoutForm />
+      <ContactForm  />
     </div>
   );
 };
