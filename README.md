@@ -1,7 +1,7 @@
 
 # Job Israel
 
-Source code of [Job-Israel](https://job-israel.netlify.app)
+Source code of [Job-Israel](https://jobs-israel.netlify.app)
 
 
 
