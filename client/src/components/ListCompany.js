@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-import image from '../job-search.png'
 import { Link } from "react-router-dom";
 
 const ListCompany = ({  company }) => {

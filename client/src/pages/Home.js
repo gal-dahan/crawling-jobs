@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useFetch from "../useFetch";
 
 // components
@@ -11,7 +11,7 @@ const Home = () => {
     error,
     isPending,
     data: jobs,
-  } = useFetch("http://localhost:8000/api");
+  } = useFetch(`${process.env.REACT_APP_PROXY}/api`);
   const [searchTerm, setSearchTerm] = useState("");
 
   const showMore = () => {

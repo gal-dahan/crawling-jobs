@@ -12,7 +12,7 @@ const JobDetails = ({  job }) => {
       {job.companyName.charAt(0).toUpperCase()+job.companyName.slice(1)}    
       </Link>
       </p>
-      <p><strong>Link:  </strong><a href={job.link} target="_blank" >Click here</a>
+      <p><strong>Link:  </strong><a href={job.link} target="_blank" rel="noopener"  >Click here</a>
 </p>
 
       <p><strong>Scanned:  </strong>

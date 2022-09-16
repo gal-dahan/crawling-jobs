@@ -1,13 +1,11 @@
-import { useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 import {  useState } from "react";
 import ListCompany from '../components/ListCompany'
 // components
-import JobDetails from "../components/JobDetails";
 
 
  const CompaniesList = () => {
-    const { error, isPending, data: jobs } = useFetch(`http://localhost:8000/api/`)
+    const { error, isPending, data: jobs } = useFetch(`${process.env.REACT_APP_PROXY}/api/`)
     const [visible,setVisible]=useState(8)
     const showMore=()=>{
       setVisible(prevVale=>prevVale+4)

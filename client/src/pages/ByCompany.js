@@ -8,7 +8,7 @@ import JobDetails from "../components/JobDetails";
  const ByCompany = () => {
     const {company}=useParams();
 
-    const { error, isPending, data: jobs } = useFetch(`http://localhost:8000/api/${company}`)
+    const { error, isPending, data: jobs } = useFetch(`${process.env.REACT_APP_PROXY}/api/${company}`)
 
     return (
         <div className="home">

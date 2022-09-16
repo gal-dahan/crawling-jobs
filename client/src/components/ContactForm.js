@@ -13,7 +13,7 @@ const ContactForm = () => {
       link: link.value,
 
     };
-    let response = await fetch("http://localhost:8000/contact", {
+    let response = await fetch(`${process.env.REACT_APP_PROXY}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
