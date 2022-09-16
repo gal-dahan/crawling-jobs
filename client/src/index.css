@@ -46,6 +46,7 @@ header a {
     grid-template-areas:
       ". ."
       ". .";
+    height: 100vh;
   }
 .about {
   position: relative;
