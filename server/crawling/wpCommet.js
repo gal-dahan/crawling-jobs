@@ -38,7 +38,10 @@ const wp = [
             x.english_name === location.toUpperCase() ||
             "TLV" == location.toUpperCase()
         );
-  
+          if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
+          link = "http://" + link;
+      }
+
         if (isIsraelByLocation || isIsrelByCities){
             await saveData(title, link, location, idJob,companyName)
   
