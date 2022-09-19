@@ -37,17 +37,15 @@ const wp = [
             x.english_name === location.toUpperCase() ||
             "TLV" == location.toUpperCase()
         );
-<<<<<<< HEAD
+
         if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
           link = "http://" + link;
       }
   
-=======
           if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
           link = "http://" + link;
       }
 
->>>>>>> b8f3ed3b1e0b4fdf3e368d3d7c1623f1ea807d80
         if (isIsraelByLocation || isIsrelByCities){
              saveData(title, link, location, idJob,companyName)
   
