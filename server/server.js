@@ -26,7 +26,7 @@ const job = new CronJob({
     startWpComeet();
     startGreenHouse();
   },
-  start: false,  timeZone: 'Israel'
+  start: false,  timeZone: 'US/East-Indiana'
 });
 
 async function startServer() {
