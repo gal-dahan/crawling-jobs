@@ -22,7 +22,7 @@ const saveData = async (title, link, location, idJob, companyName) => {
 };
 
 const getAllJobs = async (req, res) => {
-  const jobs = await Jobs.find({}).sort({ createdAt: "desc" }).exec();
+  const jobs = await Jobs.find({}).sort({ createdAt: "desc" }).lean();
   res.status(200).json({ jobs, count: jobs.length });
 };
 

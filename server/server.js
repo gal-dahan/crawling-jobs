@@ -19,12 +19,12 @@ mongoose.connection.on("error", (err) => {
 const job = new CronJob({
   //* * * * * every minute --- for Debugging
   //0 */6 * * * every 6 hours --- in production
-  cronTime: "* * * * *",
+  cronTime: "0 */6 * * *",
   onTick: function () {
     console.log("start crawling", new Date());
-    //startComeet();
+    startComeet();
     startWpComeet();
-   // startGreenHouse();
+   startGreenHouse();
   },
   start: false,  timeZone: 'US/East-Indiana'
 });
