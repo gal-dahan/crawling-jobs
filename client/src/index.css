@@ -67,7 +67,9 @@ header a {
   font-size: 18px;
   color: #000;
   font-family: "Poppins";
-
+}
+.about a {
+  color: inherit;
 }
 .workout-details {
   background: #fff;
