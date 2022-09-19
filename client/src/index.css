@@ -46,12 +46,13 @@ header a {
     grid-template-areas:
       ". ."
       ". .";
-    height: 100vh;
+      height: 100vh;
+   
   }
 .about {
   position: relative;
-  width:70%;
-  height:400px;
+  width:60%;
+  height:200px;
   background:#FFF;
   margin: auto;
   text-align:center;
@@ -61,10 +62,13 @@ header a {
 
 
 }
-.about p{
+.about span{
   display: block;
   text-align:center;
   padding: 30px;
+  font-size: 15px;
+  color: #000;
+  font-family: "Poppins";
 
 }
 .workout-details {
@@ -130,6 +134,14 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+
+
+
+
+
+
+
 
 .loadMore {
   width: 200px;
