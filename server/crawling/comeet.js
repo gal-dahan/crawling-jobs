@@ -122,7 +122,7 @@ const urls = [
   "https://www.comeet.com/jobs/ai21/E6.001"
 ];
 
-const crawling = async job => {
+const crawling =  job => {
   let title = job?.name;
   let location = job?.location?.name;
   let locationCountry = job?.location?.country;
@@ -139,7 +139,7 @@ const crawling = async job => {
       "TLV" == locationCity?.toUpperCase()
   );
   if (isIsraelByLocation || isIsrelByCities){
-    await saveData(title, link, location, idJob,companyName)
+     saveData(title, link, location, idJob,companyName)
   }};
 
 const extractCompanyPositions = url =>

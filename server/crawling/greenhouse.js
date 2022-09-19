@@ -57,7 +57,7 @@ const companyGreenhouse = [
   
 
 
-  const greenHouse = async(companyName) =>{
+  const greenHouse = (companyName) =>{
     console.log(companyName);
     let url = "https://boards.greenhouse.io/" + companyName;
       
@@ -67,7 +67,7 @@ const companyGreenhouse = [
         const html = response.data;
         const $ = cheerio.load(html);
   
-        $(".opening", html).each(async function () {
+        $(".opening", html).each( function () {
           let location = $(this).children(".location").text().trim();
           let title = $(this).children("a").first().text().trim();
           let link = $(this).children("a").first().attr("href");
@@ -82,7 +82,7 @@ const companyGreenhouse = [
           let idJob = `${companyName}-${link.split("/").pop()}`;
           //if Location job is Israel push
           if (isIsraelByLocation || isIsrelByCities){
-            await saveData(title, link, location, idJob,companyName)
+             saveData(title, link, location, idJob,companyName)
 
           }
             //Jobs.push({ title, link, location, idJob,companyName,date:new Date() });

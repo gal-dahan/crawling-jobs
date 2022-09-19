@@ -21,26 +21,35 @@ const wp = [
     "https://www.hibob.com/careers",
     "https://cajarobotics.com/careers"
   ];
-  const wpComeet = async(url) =>{
+  const wpComeet = (url) =>{
     axios.get(url).then((response) => {
       const html = response.data;
       const $ = cheerio.load(html);
-      $(".comeet-position", html).each(async function () {
+      $(".comeet-position", html).each( function () {
         let companyName=url.split('//').pop().split('.')[0]
         let title = $(this).children(".comeet-position-name").text().trim();
         let link = $(this).first().attr("href")?.replace("//", "");
         let location=$(this).children(".comeet-position-meta").text().trim().split('·')[0];
         let idJob = `${companyName}-${title}`;
         let isIsraelByLocation = location.toUpperCase().includes("ISRAEL");
-  
         let isIsrelByCities = cities.some(
           (x) =>
             x.english_name === location.toUpperCase() ||
             "TLV" == location.toUpperCase()
         );
+<<<<<<< HEAD
+        if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
+          link = "http://" + link;
+      }
   
+=======
+          if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
+          link = "http://" + link;
+      }
+
+>>>>>>> b8f3ed3b1e0b4fdf3e368d3d7c1623f1ea807d80
         if (isIsraelByLocation || isIsrelByCities){
-            await saveData(title, link, location, idJob,companyName)
+             saveData(title, link, location, idJob,companyName)
   
         }
       });
