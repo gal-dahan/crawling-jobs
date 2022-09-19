@@ -119,7 +119,8 @@ const urls = [
   "https://www.comeet.com/jobs/minutemedia/45.00A",
   "https://www.comeet.com/jobs/ctera/A0.003",
   "https://www.comeet.com/jobs/voyagerlabs/63.00A",
-  "https://www.comeet.com/jobs/ai21/E6.001"
+  "https://www.comeet.com/jobs/ai21/E6.001",
+  "https://www.comeet.com/jobs/karma/E6.00B"
 ];
 
 const crawling =  job => {
