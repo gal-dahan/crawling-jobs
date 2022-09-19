@@ -41,8 +41,3 @@ npm Start
 ```
 
 
-## Architecture
-
-[remotebear-io](https://github.com/remotebear-io/remotebear)
-![App Screenshot](https://raw.githubusercontent.com/remotebear-io/remotebear/master/.github/flow.png)
-
