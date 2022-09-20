@@ -38,11 +38,7 @@ const wp = [
             "TLV" == location.toUpperCase()
         );
 
-        if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
-          link = "http://" + link;
-      }
-  
-          if (!/^(?:f|ht)tps?\:\/\//.test(link)) {
+        if (!/^(?:f|ht)tps?\:\/\//.test(link)||!/^(?:f|ht)tp?\:\/\//.test(link)) {
           link = "http://" + link;
       }
 
