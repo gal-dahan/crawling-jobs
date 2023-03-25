@@ -13,7 +13,7 @@ Source code of [Jobs-Israel](https://jobs-israel.netlify.app)
 
 **Client:** React
 
-**Server:** Node, Express, Cheerio, Nodemailer 
+**Server:** Node(v14.17.1), Express, Cheerio, Nodemailer 
 
 **Database:** MongoDB
 
@@ -39,5 +39,10 @@ Start the server and client
 ```bash
 npm Start
 ```
-
+To set up your environment variables, create a new file named `.env` in the `server` folder of the project and copy the contents of `.env.example` into it. Then, replace the placeholders with your own values:
+```
+MONGO=mongodb+srv://username:password@your-mongo-cluster.mongodb.net/your-db-name
+MAIL_USERNAME=your-email@example.com
+MAIL_PASSWORD=your-email-password
+```
 
