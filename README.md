@@ -34,19 +34,19 @@ Client:
 ```
 
 
-Start the server and client
+# Start the server and client
 
 ```bash
 npm Start
 ```
-To set up your environment variables, create a new file named `.env` in the `server` folder of the project and copy the contents of `.env.example` into it. Then, replace the placeholders with your own values:
+#### To set up your environment variables, create a new file named `.env` in the `server` folder of the project and copy the contents of `.env.example` into it. Then, replace the placeholders with your own values:
 ```
 MONGO=mongodb+srv://username:password@your-mongo-cluster.mongodb.net/your-db-name
 MAIL_USERNAME=your-email@example.com
 MAIL_PASSWORD=your-email-password
 ```
 
-Debugging
+## Debugging
 If you would like to change the timing of the CronJob for debugging purposes,or startup the project locally in first time to Start scanning and filling the database. you can modify the cronTime value in the crawling-jobs/server/server.js file. By default, the CronJob is set to run every 6 hours in production, but for debugging purposes, you may want to set it to run more frequently.
 
 To change the timing of the CronJob, find the following code in the crawling-jobs/server/server.js:
