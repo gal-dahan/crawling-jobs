@@ -25,12 +25,12 @@ Install project with npm.
 Server:
 ```bash
     cd server
-    npm install
+    npm ci
 ```
 Client:
 ```bash
     cd client 
-    npm install
+    npm ci
 ```
 
 
